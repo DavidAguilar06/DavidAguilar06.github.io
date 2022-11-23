@@ -7,7 +7,14 @@
     <title>Mi gráfica en clase</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-
+    <style>
+        #name{background-color: rgb(16, 129, 204);
+        color: black;
+        width: 30%;
+        text-align: center;
+        align-content: center;
+        }
+    </style>
 </head>
 <body style="background-color: rgb(243, 243, 243);">
 
@@ -31,10 +38,10 @@
             </div>
             <div class="col-3">
                 <div class="card bg-dark text-light" style="width: 18rem;">
-                    <img class="m-3" src="https://m.media-amazon.com/images/I/41ouIlZNwnL._AC_.jpg" class="card-img-top" alt="...">
+                    <img class="m-3" src="https://i.pinimg.com/736x/2a/d5/de/2ad5deeb58a28df8090715c6bc920aca.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <p class="card-text"><strong> Metallica - Acoustic Metal</strong></p>
-                    Portada real de un album de Metallica, que parece hecho en un mercado o tianguis.
+                    <p class="card-text"><strong> Eddie Barclay - Surprise Party</strong></p>
+                    Portada del album Surprice party con trajes "inusuales", vaya que fue sorpresa...
                     </div>
                 </div>
             </div>
@@ -53,10 +60,10 @@
             </div>
             <div class="col-3">
                 <div class="card bg-dark text-light" style="width: 18rem;">
-                    <img class="m-3" src="https://us.123rf.com/450wm/farberalex/farberalex1708/farberalex170800011/84912982-disco-de-cd-ilustraci%C3%B3n-del-vector.jpg" class="card-img-top" alt="...">
+                    <img class="m-3" src="https://upload.wikimedia.org/wikipedia/en/5/51/TrickDaddyThug.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <p class="card-text"><strong> Artista - Nombre del disco</strong></p>
-                    Descripción resumida de su opinión o algún dato curioso sobre el álbum.
+                    <p class="card-text"><strong> TrickDaddy - www.thug.com</strong></p>
+                    Un album de hiphop de los 90's, hasta el nombre esta feo.
                     </div>
                 </div>
             </div>
@@ -76,10 +83,10 @@
             </div>
             <div class="col-3">
                 <div class="card bg-dark text-light" style="width: 18rem;">
-                    <img class="m-3" src="https://us.123rf.com/450wm/farberalex/farberalex1708/farberalex170800011/84912982-disco-de-cd-ilustraci%C3%B3n-del-vector.jpg" class="card-img-top" alt="...">
+                    <img class="m-3" src="https://i.scdn.co/image/ab67616d0000b2738586e03f4998357059d016a1" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <p class="card-text"><strong> Artista - Nombre del disco</strong></p>
-                    Descripción resumida de su opinión o algún dato curioso sobre el álbum.
+                    <p class="card-text"><strong> Canserbero - Guia para la accion</strong></p>
+                    En general es un buen album solo que la portada solo es un fondo cafe y una hormiga, nose no me gusta.
                     </div>
                 </div>
             </div>
@@ -91,6 +98,7 @@
             </div>
         </div>
     </div>
+    <h4 id="name"> Perez Aguilar Victor David</h4>
     
     <script>
         const ctx1 = document.getElementById('myChart1').getContext('2d');
@@ -99,17 +107,17 @@
             data: {
                 labels: ['Originalidad', 'Efectos', 'Artístico',],
                 datasets: [{
-                    label: 'Disco: Acoustic Metal - Metallica',
-                    data: [1, 1, 2],
+                    label: 'Eddie Barclay - Surprise Party',
+                    data: [4, 1, 0.5],
                     backgroundColor: [
+                        'rgba(255, 128, 0, 0.5)',
+                        'rgba(54, 162, 235, 0.2)',
                         'rgba(255, 20, 20, 0.2)',
-                        'rgba(1, 200, 20, 0.2)',
-                        'rgba(120, 10, 180, 0.2)',
                     ],
                     borderColor: [
+                        'rgba(255, 128, 0, 1)',
+                        'rgba(54, 162, 235, 1)',
                         'rgba(255, 20, 20, 1)',
-                        'rgba(1, 200, 20, 1)',
-                        'rgba(120, 10, 180, 1)',
                     ],
                     borderWidth: 4
                 }]
@@ -130,20 +138,20 @@
         const myChart2 = new Chart(ctx2, {
             type: 'bar',
             data: {
-                labels: ['Creatividad', 'Cantidad de Colores', 'Nombre del album', 'Ventas'],
+                labels: ['Originalidad', 'Efectos', 'Artístico'],
                 datasets: [{
-                    label: 'Artista - Nombre del disco',
-                    data: [4, 10, 9, 10],
+                    label: 'TrickDaddy - www.thug.com',
+                    data: [3, 10, 1],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(30 , 255, 20 , 0.3)',
+                        'rgba(0 , 0, 0, 0.2)',
+                        'rgba(255, 60, 60, 0.2)',
                         'rgba(75, 192, 192, 0.2)'
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
+                        'rgba(30 , 255, 20, 1)',
+                        'rgba(0, 0, 0, 1)',
+                        'rgba(255, 60, 60, 1)',
                         'rgba(75, 192, 192, 1)'
                     ],
                     borderWidth: 4
@@ -163,19 +171,19 @@
         const myChart3 = new Chart(ctx3, {
             type: 'bar',
             data: {
-                labels: ['Etiqueta1', 'Etiqueta2', 'Etiqueta3', 'Etiqueta4'],
+                labels: ['Originalidad', 'Efectos', 'Artístico'],
                 datasets: [{
-                    label: 'Artista - Nombre del disco',
-                    data: [4, 10, 9, 10],
+                    label: 'Canserbero - Guia para la accion',
+                    data: [4, 1, 10],
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(190, 80, 20, 0.2)',
+                        'rgba(80, 162, 80, 0.2)',
                         'rgba(255, 206, 86, 0.2)',
                         'rgba(75, 192, 192, 0.2)',
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
+                        'rgba(190, 80, 20, 0.6)',
+                        'rgba(80, 162, 80, 1)',
                         'rgba(255, 206, 86, 1)',
                         'rgba(75, 192, 192, 1)',
                     ],
