@@ -1,207 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi gráfica en clase</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
-    <style>
-        #name{background-color: rgb(16, 129, 204);
-        color: black;
-        width: 30%;
-        text-align: center;
-        align-content: center;
-        margin: 25px;
-        margin-left: 35%;
-
-        }
-    </style>
+    <title>Mi archivo</title>
 </head>
-<body style="background-color: rgb(243, 243, 243);">
-
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark mb-5">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Práctica Introduccion</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          </div>
-        </div>
-      </nav>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-1">
-                <div class="m-1">
-                    <p style="font-size: 12rem;">1</p>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card bg-dark text-light" style="width: 18rem;">
-                    <img class="m-3" src="https://i.pinimg.com/736x/2a/d5/de/2ad5deeb58a28df8090715c6bc920aca.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <p class="card-text"><strong> Eddie Barclay - Surprise Party</strong></p>
-                    Portada del album Surprice party con trajes "inusuales", vaya que fue sorpresa...
-                    </div>
-                </div>
-            </div>
-            <div class="col-8">
-                <div id="grafica">
-                    <canvas id="myChart1"></canvas>
-                </div>            
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-1">
-                <div class="m-1">
-                    <p style="font-size: 12rem;">2</p>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card bg-dark text-light" style="width: 18rem;">
-                    <img class="m-3" src="https://upload.wikimedia.org/wikipedia/en/5/51/TrickDaddyThug.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <p class="card-text"><strong> TrickDaddy - www.thug.com</strong></p>
-                    Un album de hiphop de los 90's, hasta el nombre esta feo.
-                    </div>
-                </div>
-            </div>
-            <div class="col-8">
-                <div id="grafica">
-        
-                    <canvas id="myChart2"></canvas>
-                </div>            
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="col-1">
-                <div class="m-1">
-                    <p style="font-size: 12rem;">3</p>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card bg-dark text-light" style="width: 18rem;">
-                    <img class="m-3" src="https://i.scdn.co/image/ab67616d0000b2738586e03f4998357059d016a1" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <p class="card-text"><strong> Canserbero - Guia para la accion</strong></p>
-                    En general es un buen album solo que la portada solo es un fondo cafe y una hormiga, nose no me gusta.
-                    </div>
-                </div>
-            </div>
-            <div class="col-8">
-                <div id="grafica">
-        
-                    <canvas id="myChart3"></canvas>
-                </div>            
-            </div>
-        </div>
-    </div>
-    <h4 id="name"> Perez Aguilar Victor David</h4>
-    
-    <script>
-        const ctx1 = document.getElementById('myChart1').getContext('2d');
-        const myChart1 = new Chart(ctx1, {
-            type: 'bar',
-            data: {
-                labels: ['Originalidad', 'Efectos', 'Artístico',],
-                datasets: [{
-                    label: 'Eddie Barclay - Surprise Party',
-                    data: [4, 1, 0.5],
-                    backgroundColor: [
-                        'rgba(255, 128, 0, 0.5)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 20, 20, 0.2)',
-                    ],
-                    borderColor: [
-                        'rgba(255, 128, 0, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 20, 20, 1)',
-                    ],
-                    borderWidth: 4
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        suggestedMin: 0,
-                        suggestedMax: 10
-                    }
-                }
-            }
-        });
-
-
-        const ctx2 = document.getElementById('myChart2').getContext('2d');
-        const myChart2 = new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                labels: ['Originalidad', 'Efectos', 'Artístico'],
-                datasets: [{
-                    label: 'TrickDaddy - www.thug.com',
-                    data: [3, 10, 1],
-                    backgroundColor: [
-                        'rgba(30 , 255, 20 , 0.3)',
-                        'rgba(0 , 0, 0, 0.2)',
-                        'rgba(255, 60, 60, 0.2)',
-                        'rgba(75, 192, 192, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(30 , 255, 20, 1)',
-                        'rgba(0, 0, 0, 1)',
-                        'rgba(255, 60, 60, 1)',
-                        'rgba(75, 192, 192, 1)'
-                    ],
-                    borderWidth: 4
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true                
-                    }
-                }
-            }
-        });
-
-
-        const ctx3 = document.getElementById('myChart3').getContext('2d');
-        const myChart3 = new Chart(ctx3, {
-            type: 'bar',
-            data: {
-                labels: ['Originalidad', 'Efectos', 'Artístico'],
-                datasets: [{
-                    label: 'Canserbero - Guia para la accion',
-                    data: [4, 1, 10],
-                    backgroundColor: [
-                        'rgba(190, 80, 20, 0.2)',
-                        'rgba(80, 162, 80, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                    ],
-                    borderColor: [
-                        'rgba(190, 80, 20, 0.6)',
-                        'rgba(80, 162, 80, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                    ],
-                    borderWidth: 4
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true                
-                    }
-                }
-            }
-        });
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<body>
+    <H3>Este es mi archivo</H3>
+    <h5>Aqu&iacute; pondre mis proyectos personales
+    </h5>
+    <nav class="menu"id="accion"> 
+        <ul>
+            <li><a href="index2.html">PC</a></li>
+            <li><a href="index3.html">XBOX</a></li>
+            <li><a href="main2.js">PLAYSTATION</a></li>
+            <li><a href="main3.js">NINTENDO</a></li>
+            <!--<li><a href="html/NINTENDO.html" target="_blank">NINTENDO</a></li>-->
+        </ul>
+    </nav>
 </body>
 </html>
