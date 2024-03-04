@@ -1,3 +1,10 @@
+a:visited {
+    color:rgb(249, 248, 255);
+}
+a:hover {
+    background-color:#424242;
+    width: 100%;
+}
 .menu {
 height: 100%;
 }
