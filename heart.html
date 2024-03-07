@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -20,11 +19,18 @@
         height: 150px;
         width: 150px;
         background-color: red;
-        position: relative;
+        position: fixed;
         transform: rotate(45deg);
         box-shadow: -20px 20px 150px #f20044;
         animation: palpitar 0.5s linear infinite alternate;
+        
     }
+   
+    .heart:hover {
+        background-color: rgb(143, 26, 179);
+        box-shadow: -20px 20px 150px #b1269e;
+    }
+    
     .contenido{
         position: fixed;
         margin-bottom: 50px;
@@ -37,7 +43,8 @@
         100%{transform: scale(0.8);}
     }
     h1{ color: white;}
-    h2{ color: #d42bc6;}
+    h2{ color: #2bd4cb;}
+    
     @keyframes palpitar{
         0%{transform: rotate(45deg) scale(1.10);}
         80%{transform: rotate(45deg) scale(1.0);}
@@ -53,6 +60,10 @@
         border-radius: 50%;
         box-shadow: 20px 20px 150px #f20044;
     }
+    .heart:hover:before {
+        background-color: rgb(143, 26, 179);
+        box-shadow: -20px 20px 150px #b1269e;
+    }
     .heart::after{
         content: "";
         position: absolute;
@@ -63,9 +74,15 @@
         border-radius: 50%;
         box-shadow: 20px 20px 150px #f20044;
     }
+    .heart:hover:after {
+        background-color: rgb(143, 26, 179);
+        box-shadow: -20px 20px 150px #b1269e;
+    }
+    
 </style>
 <body>
     <div class="heart"></div>
-    <div class="contenido"><h1>Alexandra</h1><h2>TE AMO</h2></div>
+    <div class="contenido"><h1>Alexandra</h1><h2 class="">TE AMO</h2></div>
+    
 </body>
 </html>
