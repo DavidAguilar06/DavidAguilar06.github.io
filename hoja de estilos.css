@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
     }
+    body{
+        background-color: rgb(52, 58, 60);
+    }
+
 a:visited {
     color:rgb(249, 248, 255);
 }
@@ -12,27 +16,34 @@ a:hover {
 height: 100%;
 }
 .menu ul{
-    background-color: rgb(0, 0, 0);
+background-color: rgba(0, 0, 0, 0.644);
 margin: 0;
 list-style: none;
 padding: 0;
-display: flex;
+display: block;
 justify-content: center;
 }
 .menu li {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 120%;
-    border-right: 1px solid rgb(160, 160, 160);;
+    font-size: 150%;
+    border: 3px solid rgb(216, 216, 216);
     text-align: center;
     flex-grow: 1;
 }
 .menu  ul li a {
     display: block;
-    padding: 15px 100px;  
+    padding: 100px;  
     color: #fff;
     text-decoration: none;
 
 }
 .menu li:hover{
     background: rgba(1,1,1,0.7);
+}
+
+.tit,h1{
+    color: rgb(171, 204, 95);
+}
+h2{
+    color: #319cce;
 }
