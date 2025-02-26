@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pucca quiere a Garu</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            position: relative;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('imagenes/fondo.png') no-repeat center center;
+            background-size: cover;
+            filter: blur(10px);
+            z-index: 0;
+        }
+
+        canvas {
+            display: block;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            },
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 0 },
+                    debug: false
+                }
+            }
+        };
+
+        const game = new Phaser.Game(config);
+        let personaje, love, garu, disparo, barrapucca, barravidagaru, cuadrovidapucca, cuadrovidagaru, hasperdido, hasganado;
+        let cursors;
+        let muerto = false;
+
+        //cargar imagenes
+        function preload() {
+            this.load.image('fondo', 'imagenes/fondo.png');
+            this.load.image('pucca', 'imagenes/pucca.png');
+            this.load.image('pucca_love', 'imagenes/pucca_love.png');
+            this.load.image('pucca_left', 'imagenes/pucca_left.png');
+            this.load.image('pucca_right', 'imagenes/pucca_right.png');
+            this.load.image('pucca_up', 'imagenes/pucca_up.png');
+            this.load.image('pucca_down', 'imagenes/pucca_down.png');
+            this.load.image('corazon', 'imagenes/corazon.gif');
+            this.load.image('barra_amor_pucca', 'imagenes/barra_amor_pucca.png');
+            this.load.image('garu', 'imagenes/garu.png');
+            this.load.image('bloqueo_garu', 'imagenes/bloqueo_garu.png');
+            this.load.image('barra_amor_garu', 'imagenes/barra_amor_garu.png');
+            this.load.image('cuadro_amor_pucca', 'imagenes/cuadro_amor_pucca.png');
+            this.load.image('cuadro_amor_garu', 'imagenes/cuadro_amor_garu.png');
+            this.load.image('has_perdido', 'imagenes/has_perdido.png');
+            this.load.image('has_ganado', 'imagenes/has_ganado.png');
+        }
+        //ubicacion de los objetos
+        function create() {
+            this.add.image(400, 300, 'fondo');
+
+            personaje = this.physics.add.sprite(50, 300, 'pucca');
+            love = this.physics.add.sprite(900, 700, 'corazon');
+            garu = this.physics.add.sprite(750, 100, 'garu');
+            disparo = this.physics.add.sprite(-400, -400, 'bloqueo_garu');
+            barrapucca = this.physics.add.sprite(103, 15, 'barra_amor_pucca');
+            barravidagaru = this.physics.add.sprite(697, 15, 'barra_amor_garu');
+
+            cuadrovidapucca = this.add.image(0, 0, 'cuadro_amor_pucca').setOrigin(0, 0);
+            cuadrovidagaru = this.add.image(608, 0, 'cuadro_amor_garu').setOrigin(0, 0);
+
+            hasperdido = this.add.image(400, 300, 'has_perdido');
+            hasganado = this.add.image(400, 300, 'has_ganado');
+            hasperdido.visible = false;
+            hasganado.visible = false;
+
+            cursors = this.input.keyboard.createCursorKeys();
+            this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+        }
+        //funcion disparo(inteligencia)
+        function disparar() {
+            if (((garu.y >= (personaje.y - 35))&&(garu.y <= (personaje.y + 35))) && garu.bandis==1) {
+                disparo.setPosition(garu.x - 20, garu.y - 10);
+                garu.bandis=0;
+            }
+            if (disparo.x > -15) {
+                disparo.x -= 5;
+            }else garu.bandis=1;
+        }
+        function update() {
+            if (!muerto) {
+                //comportamiento y asignacion de teclas 
+                if (cursors.space.isDown) {
+                    personaje.setTexture('pucca_love');
+                    love.setPosition(personaje.x + 30, personaje.y + 7);
+                } else if (love.x > 860) {
+                    personaje.setTexture('pucca');
+                } else love.x+=8;
+                if (cursors.left.isDown && personaje.x>40)  {
+                    personaje.setTexture('pucca_left');
+                    personaje.setVelocityX(-200);
+                } else if (cursors.right.isDown && personaje.x<670) {
+                    personaje.setTexture('pucca_right');
+                    personaje.setVelocityX(200);
+                } else {
+                    personaje.setVelocityX(0);
+                }
+                if (cursors.up.isDown && personaje.y>55) {
+                    personaje.setTexture('pucca_up');
+                    personaje.setVelocityY(-200);
+                } else if (cursors.down.isDown && personaje.y<570) {
+                    personaje.setTexture('pucca_down');
+                    personaje.setVelocityY(200);
+                } else {
+                    personaje.setVelocityY(0);
+                }
+                //movimiento de garu
+                if (garu.y === 45) {
+                    garu.bandera = 0;
+                } else if (garu.y === 560) {
+                    garu.bandera = 1;
+                }
+
+                if (garu.bandera === 0) {
+                    garu.y += 5;
+                } else {
+                    garu.y -= 5;
+                }
+                disparar();//comprobando si puede disparar
+
+                //control de las barras de vida de los personajes
+                if (barrapucca.x <= -55) {
+                    personaje.muerto = true;
+                    hasperdido.visible = true;
+                    this.physics.pause();
+                    setTimeout(() => this.scene.restart(), 6000);
+                }
+
+                if (barravidagaru.x >= 860) {
+                    garu.muerto = true;
+                    hasganado.visible = true;
+                    this.physics.pause();
+                    setTimeout(() => this.scene.restart(), 6000);
+                }
+
+                // Lógica para actualizar la barra de vida y los colisiones
+                if (disparo.y >= (personaje.y - 56) && disparo.y <= (personaje.y + 62) && disparo.x >= personaje.x && disparo.x <= (personaje.x + 43)) {
+                    barrapucca.x -= 26;
+                    disparo.setPosition(-400, -400);
+                }
+
+                if (love.y >= (garu.y -36)&& love.y <= (garu.y + 62) && love.x >= garu.x && love.x <= (garu.x + 43)) {
+                    barravidagaru.x += 26;
+                    love.setPosition(900, 700);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
