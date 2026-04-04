@@ -1,0 +1,79 @@
+ body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://img.freepik.com/free-photo/plain-smooth-green-wall-texture_53876-129746.jpg?semt=ais_rp_progressive&w=740&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        #contenedor-principal {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 10px;
+            width: 80%;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: #2ecc71;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover { background-color: #27ae60; }
+
+        #tablero {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .celda {
+            width: 100px;
+            height: 100px;
+            font-size: 40px;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            transition: 0.2s;
+        }
+
+        .celda:hover { background: rgba(255, 255, 255, 0.2); }
+
+        #marcador {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            background: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .btn-reinicio {
+            margin-top: 20px;
+            background-color: #e74c3c;
+        }

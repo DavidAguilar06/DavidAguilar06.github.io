@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gato</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="contenedor-principal">
+    <div id="menu">
+        <h2>Gato / 3 en linea</h2>
+        <input id="nombre" placeholder="Tu Nombre">
+        <input id="codigoSala" placeholder="Código de Sala">
+        <br>
+        <button onclick="entrarSala()">Play</button>
+    </div>
+
+    <div id="juego" style="display:none">
+        <div style="text-align: left;">
+        <button onclick="salirSala()" style="background: #555; padding: 5px 10px;">← Salir</button>
+        </div>
+        <div id="marcador">
+            <div><span id="n1">P1</span>: <b id="v1">0</b></div>
+            <div><span id="n2">P2</span>: <b id="v2">0</b></div>
+        </div>
+        <h3 id="info">Esperando otro jugador</h3>
+        
+        <div id="tablero">
+            <button class="celda" onclick="jugar(0)"></button>
+            <button class="celda" onclick="jugar(1)"></button>
+            <button class="celda" onclick="jugar(2)"></button>
+            <button class="celda" onclick="jugar(3)"></button>
+            <button class="celda" onclick="jugar(4)"></button>
+            <button class="celda" onclick="jugar(5)"></button>
+            <button class="celda" onclick="jugar(6)"></button>
+            <button class="celda" onclick="jugar(7)"></button>
+            <button class="celda" onclick="jugar(8)"></button>
+        </div>
+
+        <button class="btn-reinicio" onclick="reiniciarPartida()">Reiniciar Tablero</button>
+    </div>
+</div>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
