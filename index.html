@@ -3,22 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>Mi archivo</title>
+    <title>Mi Archivo X</title>
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="tit">
-    <h2>Archivo X</h2>
-    <h4>Este es mi archivo aqu&iacute; pondre mis proyectos personales</h4>
-    </div>
-    <nav class="menu"id="accion"> 
-        <ul>
-            <li><a href="assets/bouncingBalls/index.html">Bouncin balls</a></li>
-            <li><a href="assets/Gravity/index.html">Gravity</a></li>
-            <li><a href="assets/gato/index.html">Gato</a></li>
-        </ul>   
 
+<header class="navbar">
+    <div class="logo">
+        <img src="images/xicon2.png" alt="Código">
+        <h1>Archivo X</h1>
+    </div>
+    
+    <nav class="social-icons">
+        <a href="https://www.facebook.com/victordavid.pa" target="_blank">
+            <i class="fab fa-facebook"></i> Facebook
+        </a>
+    
+        <a href="mailto:davidaguilar06.dev@gmail.com" class="tooltip" data-info="davidaguilar06.dev@gmail.com">
+            <i class="fas fa-envelope"></i> Correo
+        </a>
+
+        <a href="tel:+526567677672" class="tooltip" data-info="+52 656 767 7672">
+            <i class="fas fa-phone"></i> Teléfono
+        </a>
     </nav>
+</header>
+<main>
+
+<section class="carrusel-container">
+    <h2>Proyectos</h2>
+
+    <div class="carrusel-wrapper">
+        <button class="scroll-btn left" onclick="scrollLeft(this)">‹</button>
+
+        <div class="scroll-content">
+            
+            <a href="assets/bouncingballs/index.html" target="_blank" class="tarjeta-proyecto">
+                <div class="tarjeta-img">
+                    <img src="images/bouncing balls.png" alt="Bouncing Balls">
+                </div>
+
+                <div class="tarjeta-info">
+                    <h3>Bouncing Balls</h3>
+                </div>
+
+                <div class="tarjeta-hover">
+                    <div class="hover-content">
+                        <p>
+                            Simulación física de esferas con colisiones,
+                            gravedad y rebotes usando JavaScript y Canvas.
+                        </p>
+
+                        <div class="tech-list">
+                            <span><i class="fab fa-js"></i> JavaScript</span>
+                            <span><i class="fas fa-paint-brush"></i> Canvas</span>
+                            <span><i class="fab fa-css3-alt"></i> CSS</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+
+            
+            <a href="/x/assets/gravity/index.html" target="_blank" class="tarjeta-proyecto">
+                <div class="tarjeta-proyecto">
+                    <div class="tarjeta-img">
+                        <img src="images/gravity.png" alt="Gravity">
+                    </div>
+                    <div class="tarjeta-info">
+                        <h3>Gravity</h3>
+                    </div>
+                    <div class="tarjeta-hover">
+                        <div class="hover-content">
+                            <p>Experimento visual de fuerzas gravitatorias.</p>
+                            <div class="tech-list">
+                                <span><i class="fab fa-js"></i> JavaScript</span>
+                                <span><i class="fab fa-css3-alt"></i> CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="assets/gato/index.html" target="_blank" class="tarjeta-proyecto">
+                <div class="tarjeta-proyecto">
+                    <div class="tarjeta-img">
+                        <img src="images/gato.png" alt="Bouncing Balls">
+                    </div>
+
+                    <div class="tarjeta-info">
+                        <h3>Gato / 3 en linea</h3>
+                    </div>
+
+                    <div class="tarjeta-hover">
+                        <div class="hover-content">
+                            <p>
+                                Juego del gato o 3 en linea usando bases de datos para conectar a 2 usuarios.
+
+                            </p>
+
+                            <div class="tech-list">
+                                <span><i class="fab fa-js"></i> JavaScript</span>
+                                <span><i class="fas fa-database"></i> Firebase</span>
+                                <span><i class="fas fa-broadcast-tower"></i> Real time DB</span>
+                                <span><i class="fab fa-css3-alt"></i> CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+
+        </div>
+
+        <button class="scroll-btn right" onclick="scrollRight(this)">›</button>
+    </div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
