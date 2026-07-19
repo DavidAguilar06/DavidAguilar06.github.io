@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rompecabezas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-folder-open" style="color: #64d8cb; font-size: 1.5rem;"></i>
+            <h1>ARCHIVO X</h1>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fas fa-envelope"></i> Correo</a>
+            <a href="#"><i class="fas fa-phone"></i> Teléfono</a>
+        </div>
+    </nav>
+
+    <div id="lobby">
+        <div id="lobby-box">
+            <i class="fas fa-puzzle-piece" style="font-size:2.5rem;color:#64d8cb;margin-bottom:12px;display:block"></i>
+            <h2>Rompecabezas</h2>
+            <div class="lobby-fila">
+                <button id="btn-crear"><i class="fas fa-plus"></i> Crear sala</button>
+            </div>
+            <div class="lobby-separador"> unirse</div>
+            <div class="lobby-fila">
+                <input id="input-codigo" type="text" maxlength="6" placeholder="Código de sala">
+                <button id="btn-unirse"><i class="fas fa-arrow-right"></i> Unirse</button>
+            </div>
+            <p id="lobby-error"></p>
+        </div>
+    </div>
+
+    <!principal>
+    <main class="main-content" style="display:none">
+        <div id="contenedor-principal">
+
+            <div id="sala-header">
+                <span id="sala-codigo-label"></span>
+                <span id="sala-jugadores"></span>
+                <button id="btn-copiar" title="Copiar código"><i class="fas fa-copy"></i></button>
+                <button id="btn-salir" title="Salir de la sala"><i class="fas fa-sign-out-alt"></i> Salir</button>
+            </div>
+
+
+            <div id="panel-imagen">
+                <div id="panel-imagen-inner">
+                    <span>Cambiar imagen</span>
+                    <div class="img-fila">
+                        <input type="text" id="img-url" placeholder="Pegar URL de imagen...">
+                        <button id="btn-url">Cargar</button>
+                    </div>
+                    <div class="img-fila">
+                        <label id="btn-archivo" for="img-file"><i class="fas fa-upload"></i> Desde archivo</label>
+                        <input type="file" id="img-file" accept="image/*" style="display:none">
+                    </div>
+                </div>
+            </div>
+
+            <div id="area-juego">
+                <div class="tablero" id="tablero"></div>
+                <div id="cursores"></div>
+            </div>
+
+            <div class="controles">
+                <button id="btn-mezclar"><i class="fas fa-shuffle"></i> Mezclar</button>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="miniatura">
+        <p>Referencia</p>
+        <canvas id="miniatura-canvas"></canvas>
+    </div>
+
+    <div id="toast"></div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
